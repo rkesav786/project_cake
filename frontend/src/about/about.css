@@ -1,0 +1,73 @@
+
+#h1{
+    text-align: center;
+    padding-top: 30px;
+    font-weight: 700;
+    color: palevioletred;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+ #p1{
+    text-align: center;  
+    line-height: 30px;
+    margin-top: 20px;
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+ }   
+ .readmore{
+    margin-left: 45%;
+    margin-bottom: 30px;
+    border-radius: 30px;
+   
+    
+ }
+ #h2{
+    text-align: center;
+    padding-top: 30px;
+    font-weight: 700;
+    color: palevioletred;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+ }
+#icon{
+ position: relative;
+ left:40%;
+}
+#h5{
+   color: palevioletred;
+   margin-top: 10px;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   font-weight: 700;
+   text-align: center;
+}
+#pa1{
+   font-size: small;
+   text-align: center;
+}
+/* 
+.team{
+ 
+   padding: 20px;
+ 
+ }
+ #card{
+   display: flex;
+   gap: 10px;
+   padding: 16px;
+   flex-wrap: wrap;
+ 
+
+   }  */
+   .team{
+ 
+      padding: 20px;
+    
+    }
+    #card{
+      display: flex;
+    gap: 50px;
+      padding: 16px;
+      flex-wrap: wrap;
+  margin: auto;
+  position: relative;
+  
+  left: 100px;
+    } 

@@ -1,0 +1,1 @@
+export let Cake_cat  = "https://theobroma.in/cdn/shop/collections/Delicacies-01_grande.jpg?v=1711720002";

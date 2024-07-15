@@ -1,0 +1,103 @@
+.footerlogo{
+   border-radius: 60px;
+   width: 100px;
+   height:100px;
+   margin-top: 40px;
+   margin-left: 30px;
+   transition: all .2s ease-in-out;
+}
+.footerlogo:hover{
+  padding: 5px;
+}
+ul li
+{
+list-style: none;
+
+}
+.footer-link{
+   text-decoration: none;
+   color:white;
+   font-weight: 700;
+   font-size: 13px;
+   line-height: 30px;
+ transition: all .5s ease;
+}
+.footer-link:hover{
+color:black ;
+padding-left: 3px;
+
+
+}
+.footer-icon{
+  transition: all .2s ease;
+}
+.footer-icon:hover{
+padding: 2px;
+color: blueviolet;
+
+}
+.sign{
+  color: white;
+  font-size: 10px;
+}
+.footerform1 {
+flex: 1; 
+padding: 10px;
+background: transparent;
+width: 150px;
+height: 15px;
+border-radius: 40px;
+border: 1px soild white;
+margin-right: 10px;
+font-size: 10px;
+
+
+border: 2px solid white;
+ }
+
+.footerbutton{
+
+   background-color: transparent;
+   padding-inline: 11px;
+   border-radius: 20px;
+   height: 23px;
+   margin-top: 10px;
+   color: white;
+   font-size: 10px;
+   border: 2px solid white;
+
+
+}
+
+.footerform:hover{
+border: 2px solid black;
+
+
+}
+.footerbutton:hover{
+   border: 2px solid black;
+   color:black ;
+  
+}
+
+#stores{
+   font-size: 10px;
+   color:white;
+ 
+}
+#places {
+   text-decoration: none;
+   color: white;
+   line-height: 20px;
+}
+#places:hover{
+   color: black;
+}
+.icon{
+color: aliceblue;
+transition: transform 0.3s ease, color 0.3s ease;
+}
+.icon:hover {
+   transform: scale(1.2); 
+ color: black;
+ }
