@@ -133,10 +133,10 @@ axios.post("http://localhost:8000/AddProduct",formData)
             <option value="Sandwiches">Sandwiches</option>
             <option value="Soft Drinks">Soft Drinks</option> */}
               <option value="">Cake</option>
-            <option value="Brithdaycake">Brithday Cake</option>
-            <option value="Anniversarycake">Anniversary cake</option>
-            <option value="Christmascake">Christmas Cake</option>
-            <option value="NewYearCake">New Year Cake</option>
+            <option value="Brithday cake">Brithday Cake</option>
+            <option value="Anniversary cake">Anniversary cake</option>
+            <option value="Christmas cake">Christmas Cake</option>
+            <option value="NewYear Cake">New Year Cake</option>
             <option value="BabyShowerCake">Baby Shower Cake</option>
           </select>
         </div>

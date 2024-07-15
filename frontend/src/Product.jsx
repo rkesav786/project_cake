@@ -27,14 +27,16 @@ function Product() {
 
         {/* Render your data here */}
         {Data && Data.length > 0 ? (
+        
           <ul style={{ display: "flex", margin: "5px", flexWrap: "wrap" }}>
             {Data.map((item) => (
               <li key={item.id} className="col-xl-2 col-lg-4 col-md-6 col-sm-6 m-5">
                 <Link to={`/Dp/${item.id}`}>
                   <div className="card card1 mt-3">
+
                     <img className="card-img-top img-fluid" src={item.CimageUrl} alt="Cake" />
                     <div className="card-body">
-                      <h6 className="card-title text-center" style={{ fontSize: 15, fontWeight: 900 }}>{item.category}</h6>
+                      <h6 className="card-title text-center" style={{ fontSize: 15, fontWeight: 900, }}>{item.category}</h6>
                     </div>
                   </div>
                 </Link>
