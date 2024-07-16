@@ -24,6 +24,7 @@ App.use(Express.json());
 const AddProduct = require("./Controllers/AddProduct");
 const GetAllCategories = require("./Controllers/GetAllCategories");
 const CategoryVice = require("./Controllers/CategoryVice");
+const SingleProduct = require("./Controllers/SingleProduct");
 
 
 
@@ -31,9 +32,7 @@ const CategoryVice = require("./Controllers/CategoryVice");
 App.post("/AddProduct",AddProduct);
 App.get("/GetAllCategories",GetAllCategories)
 App.get("/CategoryVice/:category",CategoryVice)
-
-
-
+App.get("/SingleProduct/:id",SingleProduct)
 
 // Start Server
 App.listen(8000, () => {

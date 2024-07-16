@@ -3,7 +3,7 @@
     text-align: center;
     padding-top: 30px;
     font-weight: 700;
-    color: palevioletred;
+    color:#6C0345 ;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
  #p1{
@@ -24,7 +24,7 @@
     text-align: center;
     padding-top: 30px;
     font-weight: 700;
-    color: palevioletred;
+    color:#6C0345;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
  }
 #icon{
@@ -32,14 +32,14 @@
  left:40%;
 }
 #h5{
-   color: palevioletred;
+   color:#6C0345;
    margin-top: 10px;
    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-   font-weight: 700;
+   font-weight: 800;
    text-align: center;
 }
 #pa1{
-   font-size: small;
+   font-size: medium;
    text-align: center;
 }
 /* 

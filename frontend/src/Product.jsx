@@ -7,7 +7,7 @@ function Product() {
   const [Data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:8000/GetAllCategories")
+    axios.get(`http://localhost:8000/GetAllCategories`)
       .then((response) => {
         setData(response.data);
       })
@@ -24,15 +24,17 @@ function Product() {
           <h1 id='h1'> Yummy Cakes</h1>
           <p id='p1'> At Theobroma, we offer a wide range of products, both sweet & savoury. Our offerings include <br /> indulgent brownies, cakes & desserts, artisanal breads, puffs & quiches, wholesome sandwiches,<br /> wraps & rolls, beverages and more.</p>
         </div>
-
+<div>
+<h2 className=' fw-bold  mt-5 ms-5' style={{color:'#6C0345'}}>Cake By Occasions</h2>
+</div>
         {/* Render your data here */}
         {Data && Data.length > 0 ? (
-        
+          
           <ul style={{ display: "flex", margin: "5px", flexWrap: "wrap" }}>
             {Data.map((item) => (
-              <li key={item.id} className="col-xl-2 col-lg-4 col-md-6 col-sm-6 m-5">
-                <Link to={`/Dp/${item.id}`}>
-                  <div className="card card1 mt-3">
+              <li key={item.id} className="col-xl-2 col-lg-4 col-md-6 col-sm-6 m-1">
+                <Link to={`/Dp/${item.category}`}>
+                  <div className="card card1 " style={{width:180}}>
 
                     <img className="card-img-top img-fluid" src={item.CimageUrl} alt="Cake" />
                     <div className="card-body">
@@ -43,6 +45,7 @@ function Product() {
               </li>
             ))}
           </ul>
+          
         ) : (
           <div>
             {/* Loading spinner or placeholder */}
@@ -51,6 +54,7 @@ function Product() {
             <div className="spinner-grow text-success" />
             {/* Add more spinner elements as needed */}
           </div>
+        
         )}
       </div>
     </>

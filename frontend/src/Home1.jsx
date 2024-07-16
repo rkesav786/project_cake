@@ -91,11 +91,11 @@ console.log(cakecard);
 
 </div>
 {/* cakeproducts */}
-<div style={{backgroundColor:'pink'}}>
+{/* <div style={{backgroundColor:'pink'}}>
 <h3 className='text-center fw-bold p-4' style={{color:'#6C0345'}}>Featured Products</h3>
   <Cakemenu/>
   
-  </div>
+  </div> */}
 
 
 {/* FEATURED PRODUCTS */}

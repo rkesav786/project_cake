@@ -16,6 +16,33 @@ import team1 from"../assets/Abhishekshah.webp"
 import Childcomponent from './Childcomponent'
 
 function About() {
+
+  let promise = [
+    {
+      pimage:"https://theobroma.in/cdn/shop/files/icon1.jpg?v=1615448111",
+      pheading:"AUTHENTIC RECIPES",
+      pdescription:"Our products are based on traditional home-style recipes, using fresh ingredients."
+    },
+    {
+      pimage:"https://theobroma.in/cdn/shop/files/icon2.jpg?v=1615448111",
+      pheading:"BAKED WITH LOVE",
+      pdescription:"Our passion for baking is poured into every recipe, serving smiles on a plate everyday."
+  
+    },
+    {
+      pimage:"https://theobroma.in/cdn/shop/files/icon3.jpg?v=1615448111",
+      pheading:"HONESTLY PRICED",
+      pdescription:"We constantly strive to offer the best products at the right prices."
+  
+    },
+    {
+      pimage:"https://theobroma.in/cdn/shop/files/icon4.jpg?v=1615448111",
+      pheading:"COMMITTED TO QUALITY",
+      pdescription:"From our ingredients to our kitchen operations & guest services, we always prioritize quality."
+  
+    }
+  
+  ]
   return (
   
   <>
@@ -66,35 +93,19 @@ function About() {
 
   </div>
 <div>
-<h1 id="h2">Our Promise</h1>
-<div className="row">
-    <div className="col-sm-3   mt-5">
-<img src={icon1} alt="" width={40} id="icon" />
-<h5 id="h5">AUTHENTIC RECIPES</h5>
-< p id="pa1">Our products are based on <br /> traditional home-style recipes, <br /> using fresh ingredients</p>
+<h3 className='text-center fw-bold mt-3' style={{color:'#6C0345'}}>Our Promise</h3>
+<div className="row mt-5">
+{promise.map((p, index) => (
+      <div key={index} className="col-xl-3 col-md-6 col-sm-6 mb-4">
+   
+<img src={p.pimage} alt="" width={40} id="icon" />
+<h5 id="h5">{p.pheading}</h5>
+< p id="pa1">{p.pdescription}</p>
 
     </div>
-    <div className="col-sm-3  mt-5">
-<img src={icon2} alt="" width={40} id="icon" />
-<h5 id="h5">AUTHENTIC RECIPES</h5>
-<p id="pa1">Our products are based on <br /> traditional home-style recipes, <br /> using fresh ingredients</p>
+   ))}
+  </div>
 
-    </div>
-  
-    <div className="col-sm-3  mt-5">
-<img src={icon3} alt="" width={40} id="icon" />
-<h5 id="h5">AUTHENTIC RECIPES</h5>
-<p id="pa1">Our products are based on <br /> traditional home-style recipes, <br /> using fresh ingredients</p>
-
-    </div>
-    
-    <div className="col-sm-3  mt-5">
-<img src={icon4} alt="" width={40} id="icon" />
-<h5 id="h5">AUTHENTIC RECIPES</h5>
-<p id="pa1">Our products are based on <br /> traditional home-style recipes, <br /> using fresh ingredients</p>
-
-    </div>
-</div>
 
 </div>
 
