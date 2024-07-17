@@ -47,8 +47,10 @@ function Navbar() {
    
         <button className="btn-nav  mt-2 fs-5 ms-3  searchbar "><FaSearch /></button>
        
-       
-        <button className="btn-nav mt-2 fs-5 ms-3  cart "><FaShoppingCart /></button>
+       <Link to="/Cart">
+       <button className="btn-nav mt-2 fs-5 ms-3  cart "><FaShoppingCart /></button>
+       </Link>
+        
       
         <button className="   ordernow-button  mt-2 px-4  ms-3 btn-sm w-100 " data-bs-toggle="modal" data-bs-target="#myModal">Order Now</button>
       <div className="ordernowmodel">

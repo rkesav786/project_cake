@@ -41,7 +41,7 @@ export const SingleProduct = () => {
     console.log("Form Data:", formData);
 
     // Example: Send data to backend (you can modify this as per your backend API)
-    axios.post('http://localhost:8000/add-to-cart', formData)
+    axios.post('http://localhost:8000/Addtocart', formData)
       .then((response) => {
         console.log("Successfully added to cart:", response.data);
         // Optionally, perform additional actions after successful addition
