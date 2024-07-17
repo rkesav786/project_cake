@@ -60,9 +60,10 @@ function About() {
 <div id="demo" className="carousel slide" data-bs-ride="carousel">
   {/* Indicators/dots */}
   <div className="carousel-indicators">
-    <button type="button" data-bs-target="#demo" data-bs-slide-to={0} className="active" />
-    <button type="button" data-bs-target="#demo" data-bs-slide-to={1} />
-    <button type="button" data-bs-target="#demo" data-bs-slide-to={2} />
+  <button type="button" data-bs-target="#demo" data-bs-slide-to="0" className="active"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
   </div>
   {/* The slideshow/carousel */}
   <div className="carousel-inner">
