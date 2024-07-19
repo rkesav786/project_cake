@@ -27,6 +27,7 @@ const CategoryVice = require("./Controllers/CategoryVice");
 const SingleProduct = require("./Controllers/SingleProduct");
 const Card = require("./Controllers/Card");
 const GetCart = require("./Controllers/GetCart");
+const DeleteCard = require("./Controllers/DeleteCard");
 
 
 
@@ -37,6 +38,7 @@ App.get("/CategoryVice/:category",CategoryVice)
 App.get("/SingleProduct/:id",SingleProduct),
 App.post("/Addtocart",Card)
 App.get("/Cart",GetCart);
+App.delete("/deletecard",DeleteCard)
 
 
 // Start Server

@@ -8,7 +8,8 @@ let cartinfo = new mongoose.Schema({
     shippingMethod:String,
     Imgurl:String,
       Name:String,
-      price:String
+      price:String,
+      timeSlot:String
 })
 
 

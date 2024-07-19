@@ -42,6 +42,8 @@ export const SingleProduct = () => {
       price:product.price
     };
 
+    
+
     // Example: Log form data to console
     console.log("Form Data:", formData);
 
