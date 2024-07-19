@@ -7,8 +7,10 @@ import { FaShoppingCart } from "react-icons/fa";
 import { TiThMenu } from "react-icons/ti";
 
 
+
 function Navbar() {
   return (
+    <>
     <nav className="navbar navbar-expand-lg  navbar-light " style={{backgroundColor:'white'}}>
   <div className="container-fluid">
   <div className="logo">
@@ -82,6 +84,7 @@ function Navbar() {
   
 </nav>
 
+</>
 
   
   )

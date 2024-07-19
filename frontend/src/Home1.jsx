@@ -4,7 +4,7 @@ import "../src/home.css"
 
 import Childcomponent from './about/Childcomponent';
 import CardRow from './CardRow';
-import Cakemenu from './component/Cakemenu';
+
 function Home() {
  let cakecard = [
 {

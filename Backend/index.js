@@ -26,6 +26,7 @@ const GetAllCategories = require("./Controllers/GetAllCategories");
 const CategoryVice = require("./Controllers/CategoryVice");
 const SingleProduct = require("./Controllers/SingleProduct");
 const Card = require("./Controllers/Card");
+const GetCart = require("./Controllers/GetCart");
 
 
 
@@ -35,6 +36,8 @@ App.get("/GetAllCategories",GetAllCategories)
 App.get("/CategoryVice/:category",CategoryVice)
 App.get("/SingleProduct/:id",SingleProduct),
 App.post("/Addtocart",Card)
+App.get("/Cart",GetCart);
+
 
 // Start Server
 App.listen(8000, () => {

@@ -2,7 +2,9 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { CiStar } from "react-icons/ci";
-import { FaStar, FaRupeeSign, FaCalendar } from "react-icons/fa";
+import { FaStar, FaRupeeSign } from "react-icons/fa";
+import Navbar from './Navbar';
+import Checkout from './Checkout';
 
 export const SingleProduct = () => {
   let { id } = useParams();
@@ -35,6 +37,9 @@ export const SingleProduct = () => {
       deliveryDate,
       shippingMethod,
       timeSlot,
+      Imgurl:product.imageUrl,
+      Name:product.cakeName,
+      price:product.price
     };
 
     // Example: Log form data to console
@@ -57,11 +62,15 @@ export const SingleProduct = () => {
   }
 
   return (
-    <div className="container mt-5">
+  <>
+  <Navbar/>
+    <div className="container mt-3">
       <div className="row">
         <div className="col-lg-6">
-          <img src={product.imageUrl} className="img-fluid" alt="Product" />
-        </div>
+          <img src={product.imageUrl} className="img-fluid" alt="Product" width={700} style={{position:'sticky',top:10}}/>
+         <p className='text-muted'>Disclaimer: Image is for representation only. Actual product design and icing may vary based on local availability.</p>
+          </div>
+          
         <div className="col-lg-6">
           <div>
             <h2 className='text-start fw-bold' style={{ color: '#6C0345' }}>{product.cakeName}</h2>
@@ -75,7 +84,7 @@ export const SingleProduct = () => {
               <div className='border border-dark mt-4 p-3' style={{ borderRadius: 10 }}>
                 <h5 className='text-start fw-bold pt-2 ps-3' style={{ color: '#6C0345' }}>Customize Your Weight</h5>
                 <div className="d-flex mt-2">
-                  <label className='fw-bold'><input className='ms-2' type="radio" name="weight" value="0.5" checked={weight === '0.5'} onChange={(e) => setWeight(e.target.value)} /> 0.5 kg</label>
+                  <label className='fw-bold'><input className='ms-2 ' type="radio" name="weight" value="0.5" checked={weight === '0.5'} onChange={(e) => setWeight(e.target.value)} /> 0.5 kg</label>
                   <label className='fw-bold'><input className='ms-2' type="radio" name="weight" value="1" checked={weight === '1'} onChange={(e) => setWeight(e.target.value)} /> 1 kg</label>
                   <label className='fw-bold'><input className='ms-2' type="radio" name="weight" value="2" checked={weight === '2'} onChange={(e) => setWeight(e.target.value)} /> 2 kg</label>
                 </div>
@@ -90,19 +99,19 @@ export const SingleProduct = () => {
                   </div>
                   <div className="col-md-6">
                     <div className="input-group">
-                      <input type="text" className="form-control" id="delivery-date" name="delivery-date" value={deliveryDate} onChange={(e) => setDeliveryDate(e.target.value)} placeholder="Select Delivery Date" aria-describedby="calendar-icon" />
-                      <span className="input-group-text" id="calendar-icon"><FaCalendar /></span>
+                      <input type="date" className="form-control" id="delivery-date" name="delivery-date" value={deliveryDate} onChange={(e) => setDeliveryDate(e.target.value)} placeholder="Select Delivery Date" aria-describedby="calendar-icon" />
+                      
                     </div>
                   </div>
                   <div className="col-md-6">
                     <select className="form-select" id="shipping-method" name="shipping-method" value={shippingMethod} onChange={(e) => setShippingMethod(e.target.value)}>
-                      <option value="standard">Standard Shipping</option>
-                      <option value="express">Express Shipping</option>
-                      <option value="same-day">Same Day Delivery</option>
+                      <option value="standard">Free Delivery</option>
+                      <option value="express">Fixed Time Delivery (Rs.45/-)</option>
+                      <option value="same-day">Mid Night Delivery (Rs.199/-)</option>
                     </select>
                   </div>
                   <div className="col-md-6">
-                    <select className="form-select" id="time-slot" name="time-slot" value={timeSlot} onChange={(e) => setTimeSlot(e.target.value)}>
+                    <select className="form-select" id="time-slot" name="time-slot" value={timeSlot} onChange={(e) => setTimeSlot(e.target.value)} placeholder="Select Time Slot">
                       <option value="morning">Morning (9am - 12pm)</option>
                       <option value="afternoon">Afternoon (12pm - 3pm)</option>
                       <option value="evening">Evening (3pm - 6pm)</option>
@@ -110,15 +119,55 @@ export const SingleProduct = () => {
                   </div>
                 </div>
                 <div className="mt-4">
-                  <button className='btn btn-warning btn-lg fs-4 p-3 d-block mx-auto w-50' type="submit">
+                  <button className='btn btn-warning btn-lg fw-bold fs-5 p-2 d-block mx-auto w-100' type="submit">
                     Add To Cart
                   </button>
                 </div>
               </div>
             </form>
+            {/* for describtion */}
+            <div>
+              <h4  className='text-start fw-bold' style={{ color: '#6C0345' }}>Product Description:</h4>
+
+               <p>
+                  {product.description}
+               </p>
+            </div>
           </div>
         </div>
       </div>
+      <div>
+
+      <p className='text-muted mt-3'style={{fontSize:11}}>Disclaimer: Image is for representation only. Actual product design and icing may vary based on local availability.</p>
+      </div>
+      {/* refunt botton */}
+
+   <div className="mt-4">
+  <button className="btn btn-warning mx-auto d-block w-25 ">Refund &amp; Delivery Policy</button>
+</div>
+<hr />
+{/* description for refund */}
+<div className='mt-5'>
+  <h5 className='text-muted'>Returns and Refunds:</h5>
+ <p>Refunds are allowed only under the following conditions:</p>
+ <ul>
+  <li>Mismatch or defective product delivery.</li>
+  <li>If the order is cancelled from our side.</li>
+  <li>Refunds will not be issued if the receiver denies accepting the order.</li>
+  </ul>
+  <h5 className='text-muted'>Cancellation:</h5>
+  <p>Orders can be cancelled up to 24 hours before the scheduled delivery time. In case of an emergency, please contact us at care@flowera.in.</p>
+  <h5 className='text-muted'>Product Variations:</h5>
+  <p>Minor changes in the product are not considered as product changes. As these are handmade products, slight variations from the images may occur</p>
+  <h5 className='text-muted'>Refund Process:</h5>
+  <p>Online refunds will be processed through the same payment method used by the customer. Refunds may take 7-10 business days to reflect in your account.</p>
+  <h5 className='text-muted'>Policy Changes:</h5>
+  <p>Flowera reserves the right to change the Refund and Cancellation Policy at any time.
+
+For any questions regarding our Refund and Cancellation Policy, please reach out to us at care@flowera.in</p>
+</div>
     </div>
+    <Checkout/>
+    </>
   );
 };

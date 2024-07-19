@@ -12,7 +12,6 @@ import { SingleProduct } from './component/SingleProduct';
 import { Cart } from './component/Cart';
 
 
-
 export const Temp = () => {
   return (<><BrowserRouter>
     <Routes>
@@ -25,7 +24,7 @@ export const Temp = () => {
      <Route path='/Dp/:category' element={<DetaileProd />}></Route>
      <Route path='/SingleProduct/:id' element={<SingleProduct/>}></Route>
      <Route path='/Cart' element={<Cart/>}></Route>
-    
+ 
     
     </Routes>
     <Footer1/>

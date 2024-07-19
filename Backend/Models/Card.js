@@ -5,10 +5,10 @@ let cartinfo = new mongoose.Schema({
     cakeName:String,
     deliveryPincode:String,
     deliveryDate:String,
-    shippingMethod:String
-
-
-
+    shippingMethod:String,
+    Imgurl:String,
+      Name:String,
+      price:String
 })
 
 
