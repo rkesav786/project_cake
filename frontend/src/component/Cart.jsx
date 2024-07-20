@@ -2,10 +2,13 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Navbar from './Navbar';
 import { MdDelete } from "react-icons/md";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Modal, Button } from 'react-bootstrap';
 
 export const Cart = () => {
   const [cakeInfo, setCakeInfo] = useState([]);
-  console.log("Cake Info:", cakeInfo);
+  const [showModal, setShowModal] = useState(false);
+  const [modalMessage, setModalMessage] = useState('');
 
   useEffect(() => {
     axios.get("http://localhost:8000/Cart")
@@ -17,19 +20,36 @@ export const Cart = () => {
       });
   }, []);
 
-  if (!cakeInfo || cakeInfo.length === 0) {
-    return <div>Loading...</div>;
-  }
+  const handleClose = () => setShowModal(false);
 
-  let DeleteCart = (id) => {
-    axios.delete("http://localhost:8000/deletecart",{id:id} )
+  const fetchCartData = () => {
+    axios.get("http://localhost:8000/Cart")
       .then((res) => {
-        alert("Item Deleted Successfully!");
-        setCakeInfo((prev) => prev.filter((item) => item._id !== id));
+        setCakeInfo(res.data);
       })
       .catch((e) => {
-        alert("Failed to delete item!");
+        console.log("Error To Fetch Cart Data!", e);
       });
+  };
+
+  const DeleteCart = (id) => {
+    axios.delete("http://localhost:8000/deletecard", {
+      data: { Pid: id }
+    })
+    .then((res) => {
+      setModalMessage('Cart item removed successfully');
+      setShowModal(true);
+      fetchCartData(); // Refresh the cart data
+    })
+    .catch((e) => {
+      setModalMessage('Error in removing cart item');
+      setShowModal(true);
+      console.log("Error to Failed", e);
+    });
+  }
+
+  if (!cakeInfo || cakeInfo.length === 0) {
+    return <div>Loading...</div>;
   }
 
   return (
@@ -112,6 +132,18 @@ export const Cart = () => {
           </div>
         </div>
       </div>
+
+      <Modal show={showModal} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Notification</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>{modalMessage}</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 };

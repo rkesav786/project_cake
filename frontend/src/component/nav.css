@@ -34,14 +34,14 @@ font-size: 17px;
   align-items: center;
   color: white;
 }
-   
+/*    
 .btn-nav:hover{
   background-color: aliceblue;
   color:black ;
 
   box-shadow: 3px 1px 2px black;
 
-}
+} */
 .ordernow-button {
   background-color: palevioletred; 
   color: white; 
@@ -79,4 +79,3 @@ font-size: 17px;
   }
   /* other styles specific for screens <= 576px */
 }
-
