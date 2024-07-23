@@ -4,11 +4,15 @@ import Navbar from './Navbar';
 import { MdDelete } from "react-icons/md";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Modal, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
 
 export const Cart = () => {
   const [cakeInfo, setCakeInfo] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
+
+  console.log(cakeInfo);
 
   useEffect(() => {
     axios.get("http://localhost:8000/Cart")
@@ -51,6 +55,8 @@ export const Cart = () => {
   if (!cakeInfo || cakeInfo.length === 0) {
     return <div>Loading...</div>;
   }
+
+  const totalPrice = cakeInfo.reduce((sum, cd) => sum + parseFloat(cd.price), 0);
 
   return (
     <>
@@ -104,19 +110,14 @@ export const Cart = () => {
                 <div className="card-title">
                   <h3 className='text-start p-2 ms-3 fw-bold' style={{ color: '#6C0345' }}>Summary</h3>
                   <div className="card-body ms-2">
-                    <h6>Subtotal:</h6>
-                    <h6>Delivery type:</h6>
-                    <h6>Total:</h6>
+                    <h6>Subtotal: {totalPrice}/-</h6>
+                    <h6>Total: {totalPrice}/-</h6>
                     <form action="">
-                      <div className="input-group mb-3 input-group-sm">
-                        <div className="input-group-prepend">
-                          <input type="text" className="form-control" style={{ maxWidth: 60 }} placeholder="+91" />
-                        </div>
-                        <input type="text" className="form-control" placeholder="Enter your mobile number" />
-                        <button className='btn btn-warning btn-lg fw-bold fs-6 p-2 mt-3 rounded-3 d-block mx-auto w-100' type="submit">
+                     <Link  to="/checkout" className='text-decoration-none'>
+                     <button className='btn btn-warning btn-lg fw-bold fs-6 p-2 mt-3 rounded-3 d-block mx-auto w-100' type="submit">
                           CHECK OUT
                         </button>
-                      </div>
+                     </Link>
                     </form>
                   </div>
                 </div>

@@ -32,13 +32,13 @@ function Product() {
           
           <ul style={{ display: "flex", margin: "5px", flexWrap: "wrap" }}>
             {Data.map((item) => (
-              <li key={item.id} className="col-xl-2 col-lg-4 col-md-6 col-sm-6 m-1">
-                <Link to={`/Dp/${item.category}`}>
+              <li key={item.id} className="col-xl-2 col-lg-2 col-md-3 col-sm-4 mt-3 ms-3">
+                <Link to={`/Dp/${item.category}`} className='text-decoration-none'>
                   <div className="card card1 " style={{width:180}}>
 
                     <img className="card-img-top img-fluid" src={item.CimageUrl} alt="Cake" />
                     <div className="card-body">
-                      <h6 className="card-title text-center" style={{ fontSize: 15, fontWeight: 900, }}>{item.category}</h6>
+                      <h6 className="card-title text-center" style={{ fontSize: 15, fontWeight: 900}}>{item.category}</h6>
                     </div>
                   </div>
                 </Link>

@@ -4,11 +4,12 @@ import { useParams } from 'react-router-dom';
 import { CiStar } from "react-icons/ci";
 import { FaStar, FaRupeeSign } from "react-icons/fa";
 import Navbar from './Navbar';
-import Checkout from './Checkout';
+
 
 export const SingleProduct = () => {
   let { id } = useParams();
   let [product, setProduct] = useState(null);
+  console.log(product);
 
   const [weight, setWeight] = useState('0.5'); // Defaulting to 0.5 kg
   const [cakeName, setCakeName] = useState('');
@@ -37,13 +38,10 @@ export const SingleProduct = () => {
       deliveryDate,
       shippingMethod,
       timeSlot,
-      Imgurl:product.imageUrl,
-      Name:product.cakeName,
-      price:product.price
+      Imgurl:product.ImgUrl,
+      Name:product.CakeName,
+      price:product.Price
     };
-
-    
-
     // Example: Log form data to console
     console.log("Form Data:", formData);
 
@@ -69,15 +67,15 @@ export const SingleProduct = () => {
     <div className="container mt-3">
       <div className="row">
         <div className="col-lg-6">
-          <img src={product.imageUrl} className="img-fluid" alt="Product" width={700} style={{position:'sticky',top:10}}/>
+          <img src={product.ImgUrl} className="img-fluid" alt="Product" width={700} style={{position:'sticky',top:10}}/>
          <p className='text-muted'>Disclaimer: Image is for representation only. Actual product design and icing may vary based on local availability.</p>
           </div>
           
         <div className="col-lg-6">
           <div>
-            <h2 className='text-start fw-bold' style={{ color: '#6C0345' }}>{product.cakeName}</h2>
+            <h2 className='text-start fw-bold' style={{ color: '#6C0345' }}>{product.CakeName}</h2>
             <p className='card-text '><span><FaStar /><FaStar /><FaStar /><FaStar /><CiStar /></span> <span className='ms-2'> 233 reviews</span></p>
-            <h1 className='fw-bold'><FaRupeeSign />{product.price}/-</h1>
+            <h1 className='fw-bold'><FaRupeeSign />{product.Price}/-</h1>
             <p className='text-muted'>inclusive of all taxes</p>
           </div>
           <div className="mt-4">
@@ -132,7 +130,7 @@ export const SingleProduct = () => {
               <h4  className='text-start fw-bold' style={{ color: '#6C0345' }}>Product Description:</h4>
 
                <p>
-                  {product.description}
+                  {product.Desc}
                </p>
             </div>
           </div>
@@ -169,7 +167,7 @@ export const SingleProduct = () => {
 For any questions regarding our Refund and Cancellation Policy, please reach out to us at care@flowera.in</p>
 </div>
     </div>
-    <Checkout/>
+
     </>
   );
 };

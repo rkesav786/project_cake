@@ -2,29 +2,31 @@ import React, { useState } from 'react';
 import CF from "../src/CakeForm.module.css";
 import axios from "axios";
 
-const CakeForm = () => {
+const ASCF = () => {
   // State variables for each form field
- 
-  const [CimageUrl, setCImageUrl] = useState('');
+  const [imageUrl, setImageUrl] = useState('');
   const [cakeName, setCakeName] = useState('');
-  
+  const [description, setDescription] = useState('');
+  const [price, setPrice] = useState('');
   const [category, setCategory] = useState('');
 
+  const [availability, setAvailability] = useState(true); // Default to true
 
   // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = {
-    
-      CimageUrl,
+      imageUrl,
       cakeName,
-     
-      category
-      
+      description,
+      price,
+      category,
+    
+      availability
     };
     console.log(formData); // Replace with your submission logic
 
-axios.post("http://localhost:8000/AddProduct",formData)
+axios.post("http://localhost:8000/AddProduct/Subcategory",formData)
 .then(()=>{
   alert("New Product Added Successfully")
 })
@@ -41,7 +43,7 @@ axios.post("http://localhost:8000/AddProduct",formData)
     setDescription('');
     setPrice('');
     setCategory('');
-    setSubcategory('');
+   
     setAvailability(true); // Reset availability to true
   };
 
@@ -49,16 +51,15 @@ axios.post("http://localhost:8000/AddProduct",formData)
     <div className="container mt-4" style={{ backgroundColor: 'pink' }}>
       <h2 className="mb-4" style={{ color: 'palevioletred' }}>Cake Information Form</h2>
       <form onSubmit={handleSubmit}>
-       
         <div className="mb-3">
-          <label htmlFor="imageUrl" className="form-label"> Category Image URL</label>
+          <label htmlFor="imageUrl" className="form-label">Image URL</label>
           <input
             type="url"
             className="form-control"
             id="imageUrl"
             placeholder="Enter image URL"
-            value={CimageUrl}
-            onChange={(e) => setCImageUrl(e.target.value)}
+            value={imageUrl}
+            onChange={(e) => setImageUrl(e.target.value)}
             required
           />
         </div>
@@ -74,8 +75,34 @@ axios.post("http://localhost:8000/AddProduct",formData)
             required
           />
         </div>
-        
-        
+        <div className="mb-3">
+          <label htmlFor="description" className="form-label">Description</label>
+          <textarea
+            className="form-control"
+            id="description"
+            rows="3"
+            placeholder="Enter cake description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          ></textarea>
+        </div>
+        <div className="mb-3">
+          <label htmlFor="price" className="form-label">Price</label>
+          <div className="input-group">
+            <span className="input-group-text">$</span>
+            <input
+              type="number"
+              min="0"
+              step="0.01"
+              className="form-control"
+              id="price"
+              placeholder="0.00"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+              required
+            />
+          </div>
+        </div>
         <div className="mb-3">
           <label htmlFor="category" className="form-label">Category</label>
           <select
@@ -99,12 +126,24 @@ axios.post("http://localhost:8000/AddProduct",formData)
             <option value="BabyShowerCake">Baby Shower Cake</option>
           </select>
         </div>
-        
-        
+     
+        <div className="mb-3">
+          <label htmlFor="availability" className="form-label">Availability</label>
+          <select
+            className="form-select"
+            id="availability"
+            value={availability ? "True" : "False"}
+            onChange={(e) => setAvailability(e.target.value === "True")}
+            required
+          >
+            <option value="True">Available</option>
+            <option value="False">Unavailable</option>
+          </select>
+        </div>
         <button type="submit" className="btn btn-primary">Submit</button>
       </form>
     </div>
   );
 };
 
-export default CakeForm;
+export default ASCF;

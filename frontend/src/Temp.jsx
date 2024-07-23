@@ -10,6 +10,8 @@ import ContactForm from "./ContactForm"
 import { DetaileProd } from './component/DetaileProd';
 import { SingleProduct } from './component/SingleProduct';
 import { Cart } from './component/Cart';
+import Checkout from './component/Checkout';
+import ASCF from './ASCF';
 
 
 export const Temp = () => {
@@ -24,6 +26,8 @@ export const Temp = () => {
      <Route path='/Dp/:category' element={<DetaileProd />}></Route>
      <Route path='/SingleProduct/:id' element={<SingleProduct/>}></Route>
      <Route path='/Cart' element={<Cart/>}></Route>
+     <Route path='/checkout' element={<Checkout/>}></Route>
+     <Route path='/Dp/:category/ASCF' element={<ASCF />} ></Route>
  
     
     </Routes>

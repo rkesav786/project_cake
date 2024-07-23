@@ -18,7 +18,8 @@ function Navbar() {
   </div>
   <div className="d-md d-lg-none d-sm d-xl-none">
   <button className="btn-nav  mt-2 fs-5 ms-3  searchbar "><FaSearch /></button>
-       
+
+
        
        <button className="btn-nav mt-2 fs-5 ms-3  cart "><FaShoppingCart /></button>
   </div>
@@ -46,8 +47,9 @@ function Navbar() {
         </ul>
        <div className=' nav-button ms-5 d-flex ms-auto'  >
 
-   
-        <button className="btn-nav  mt-2 fs-5 ms-3  searchbar "><FaSearch /></button>
+       <button className="btn-nav  mt-2 fs-5 ms-3  searchbar  "><FaSearch /></button>
+  
+
        
        <Link to="/Cart">
        <button className="btn-nav mt-2 fs-5 ms-3  cart "><FaShoppingCart /></button>

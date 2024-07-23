@@ -1,4 +1,6 @@
 import React from 'react'
+import OrderSuccessModal from './OrderSuccessModal'
+import Navbar from '../component/Navbar'
 
 function Checkout() {
   return (
@@ -8,9 +10,10 @@ function Checkout() {
   
 </h4>
   </div> */}
-  <h5 className='text-start fw-bold'>Receiver details</h5>
-  <div className="row">
-    <div className="col-lg-5">
+<Navbar/>
+  <h5 className='text-start fw-bold ms-3'>Receiver details</h5>
+  <div className="row ms-2">
+    <div className="col-lg-6">
  <div className="card">
   <div className="card-body "style={{backgroundColor:"#fff0f7"}}>
   <form>
@@ -33,30 +36,30 @@ function Checkout() {
     </div>
     <div className="col-md-6">
       <label htmlFor="phone" className="form-label">Receiver's Country *</label>
-      <input type="text" className="form-control" id="phone" placeholder="" />
+      <input type="text" className="form-control" id="phone" placeholder="" required/>
     </div>
     <div className="col-md-6">
       <label htmlFor="phone" className="form-label">Receiver's Pin Code *</label>
-      <input type="text" className="form-control" id="phone" placeholder="" />
+      <input type="text" className="form-control" id="phone" placeholder="" required />
     </div>
     <div className="col-md-6">
       <label htmlFor="phone" className="form-label">Receiver's State *</label>
-      <input type="text" className="form-control" id="phone" placeholder="" />
+      <input type="text" className="form-control" id="phone" placeholder="" required/>
     </div>
     <div className="col-md-6">
       <label htmlFor="phone" className="form-label">Receiver's Town/City *</label>
-      <input type="text" className="form-control" id="phone" placeholder="" />
+      <input type="text" className="form-control" id="phone" placeholder="" required />
     </div>
     <div class="col-12">
           <label for="address" class="form-label">Address</label>
-          <textarea class="form-control" id="address" rows="4" placeholder="Enter your address"></textarea>
+          <textarea class="form-control" id="address" rows="4" placeholder="Enter your address" required></textarea>
         </div>
   </div>
 
 </form>
   </div>
  </div>
- <div className='mt-5'>
+ <div className='mt-3'>
   <h5 className='text-start fw-bold'>Sender Details</h5>
   <div className="card">
   <div className="card-body "style={{backgroundColor:"#fff0f7"}}>
@@ -94,6 +97,76 @@ function Checkout() {
  </div>
  </div>
     </div>
+    <div className="col-lg-6">
+      <div className="card"  style={{backgroundColor:"#fff0f7"}}>
+        <div className="card-body">
+<table className="table " >
+  <thead >
+    <tr>
+     
+      <th className='fs-5' style={{backgroundColor:"#fff0f7"}}>PRODUCT</th>
+      <th   className='fs-5' style={{backgroundColor:"#fff0f7"}}>AMOUNT</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+
+      <td className='fw-bold'>Heart Velvet Cake</td>
+      <td>₹2998</td>
+   
+    </tr>
+    <tr>
+ 
+      <td  className='fw-bold'>Addon Product Price</td>
+      <td>₹0</td>
+      
+    </tr>
+    <tr>
+
+      <td  className='fw-bold'>Delivery Charge</td>
+      <td>₹0</td>
+  
+    </tr>
+    <tr>
+
+<td  className='fw-bold'>Total</td>
+<td>₹2998</td>
+
+</tr>
+  </tbody>
+</table>
+</div>
+      </div>
+      <div className="card mt-3">
+      <div className="card-title fs-5 p-3 fw-bold " style={{backgroundColor:"#fff0f7"}}>
+      PAYMENT METHODS
+      </div>
+      <div className="card-body">
+     <form>
+  <div className="form-check">
+    <input className="form-check-input" type="radio" name="paymentMethod" id="onlinePayment" defaultValue="online" required />
+    <label className="form-check-label fw-bold" htmlFor="onlinePayment">
+      Online Payment
+    </label>
+  </div>
+  <div className="form-check mt-3">
+    <input className="form-check-input" type="radio" name="paymentMethod" id="cod" defaultValue="cod" required />
+    <label className="form-check-label fw-bold" htmlFor="cod">
+      Cash on Delivery (COD)
+    </label>
+  </div>
+</form>
+<h6 className='mt-2 fw-bold'>Pay via UPI, Net Banking, Debit Card, Credit Card and Wallets</h6>
+
+<p className='mt-2 '>
+Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our <br /> <a href="">privacy policy</a>
+</p>
+<OrderSuccessModal/>
+      </div>
+    </div>
+    </div>
+  
   </div>
   
   

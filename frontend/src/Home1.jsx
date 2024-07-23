@@ -37,7 +37,7 @@ console.log(cakecard);
     <>
     <Navbar/>
       <div className='home'>
-    <img src="https://flowera.in/uploads/tempDir/citySlid_06_667bf5b8a9074-1920X788.jpg" alt=""  className='img-fluid homeimg'/>
+    <img src="https://flowera.in/uploads/tempDir/BannerImg_06_1719231380-1913X692.jpg" alt=""  className='img-fluid homeimg'/>
    </div>
    
    <div style={{backgroundColor:'pink'}}>
