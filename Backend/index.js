@@ -28,6 +28,8 @@ const SingleProduct = require("./Controllers/SingleProduct");
 const Card = require("./Controllers/Card");
 const GetCart = require("./Controllers/GetCart");
 const DeleteCard = require("./Controllers/DeleteCard");
+const ASC = require("./Controllers/ASC");
+
 
 
 
@@ -39,7 +41,7 @@ App.get("/SingleProduct/:id",SingleProduct),
 App.post("/Addtocart",Card)
 App.get("/Cart",GetCart);
 App.delete("/deletecard",DeleteCard)
-
+App.post("/AddProduct/Subcategory",ASC)
 
 // Start Server
 App.listen(8000, () => {

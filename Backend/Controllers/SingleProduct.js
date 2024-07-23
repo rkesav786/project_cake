@@ -1,10 +1,10 @@
-let CDB = require("../Models/CakeDB");
+let SCCD = require("../Models/ASCD");
 module.exports = (req,res)=>{
 
     let {id} = req.params;
     console.log(id);
 
-CDB.findById({_id:id})
+SCCD.findById({_id:id})
 .then((data)=>{
     res.send(data)
 })
