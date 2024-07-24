@@ -14,7 +14,7 @@ const ContactForm = () => {
   return (
     <>
       <Navbar />
-      <div style={{ backgroundColor: "pink" }}>
+      <div style={{ backgroundColor: "#fff0f7" }}>
         <h1 className={CUS.h1}>Contact Us</h1>
         <p className={CUS.p1}>We would love to hear from you. Share your thoughts and queries with us!</p>
 

@@ -63,7 +63,7 @@ const CardCarousel = () => {
   };
 
   return (
-    <div className="container mt-4" style={{backgroundColor:'pink'}}>
+    <div className="container mt-4" style={{backgroundColor:'#fff0f7'}}>
       <h3 className="text-center mb-4 fw-bolder p-4 " style={{color:'#6C0345'}}>What Our Client Says</h3>
       <Slider {...settings}>
         {cardData.map((card) => (

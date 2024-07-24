@@ -47,7 +47,7 @@ function About() {
   
   <>
   <Navbar/>
-   <div className='about' style={{backgroundColor:'pink'}}>
+   <div className='about' style={{backgroundColor:'#fff0f7'}}>
    <h1 id="h1">About us</h1>
    <p id="p1">Established in Kolkata in 1892, yummy cake is a household name in <br /> India, and one of the country’s leading food products companies. <br /> Our key businesses are in bakery, dairy, and adjacent snacking <br /> categories and our operations span over 80 countries in the world.</p>
 
@@ -111,7 +111,7 @@ function About() {
 </div>
 
 {/* code for our team */}
-<div style={{backgroundColor:'#FFE9D0'}}>
+<div style={{backgroundColor:'#fff0f7'}}>
   <div>
   <h1 id="h1">Our Team</h1>
   <Childcomponent/>
@@ -122,7 +122,7 @@ function About() {
 
 
 
-<div style={{backgroundColor:'#D8EFD3'}}>
+<div style={{backgroundColor:'#ECFFE6'}}>
 <div>
   <h1 id="h1">Like Our Products?</h1>
   <p id='p1' className='mt-5'>

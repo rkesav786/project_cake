@@ -40,7 +40,7 @@ console.log(cakecard);
     <img src="https://flowera.in/uploads/tempDir/BannerImg_06_1719231380-1913X692.jpg" alt=""  className='img-fluid homeimg'/>
    </div>
    
-   <div style={{backgroundColor:'pink'}}>
+   <div style={{backgroundColor:'#fff0f7'}}>
    <div className="container mt-5 " >
     <h3 className='text-center fw-bold p-4' style={{color:'#6C0345'}}>Best selling Cakes</h3>
   <div className="row">
@@ -99,7 +99,7 @@ console.log(cakecard);
 
 
 {/* FEATURED PRODUCTS */}
-<div style={{backgroundColor:'pink'}}><CardRow/></div>
+<div style={{backgroundColor:'#fff0f7'}}><CardRow/></div>
 
 
 {/* cake card */}

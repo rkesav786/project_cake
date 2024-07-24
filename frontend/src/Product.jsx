@@ -20,7 +20,7 @@ function Product() {
     <>
       <Navbar />
       <div>
-        <div style={{ backgroundColor: 'pink' }}>
+        <div style={{ backgroundColor: '#fff0f7' }}>
           <h1 id='h1'> Yummy Cakes</h1>
           <p id='p1'> At Theobroma, we offer a wide range of products, both sweet & savoury. Our offerings include <br /> indulgent brownies, cakes & desserts, artisanal breads, puffs & quiches, wholesome sandwiches,<br /> wraps & rolls, beverages and more.</p>
         </div>

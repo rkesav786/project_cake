@@ -7,10 +7,12 @@ import { Modal, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 
-export const Cart = () => {
+export const Cart = ({updateTotal,CartProduct}) => {
   const [cakeInfo, setCakeInfo] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
+
+  CartProduct(cakeInfo)
 
   console.log(cakeInfo);
 
@@ -57,6 +59,7 @@ export const Cart = () => {
   }
 
   const totalPrice = cakeInfo.reduce((sum, cd) => sum + parseFloat(cd.price), 0);
+  updateTotal(totalPrice);
 
   return (
     <>
