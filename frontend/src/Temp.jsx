@@ -16,7 +16,9 @@ import ASCF from './ASCF';
 
 export const Temp = () => {
   const [total, setTotal] = useState(0);
-  const [CartData, setCartData] = useState();
+  const [CartData, setCartData] = useState([]);
+
+  console.log(CartData);
 
   const updateTotal = (newTotal) => {
     setTotal(newTotal);
@@ -26,7 +28,7 @@ export const Temp = () => {
     setCartData(CartD);
   };
 
-  console.log(CartData);
+  
 
 
 
@@ -49,8 +51,8 @@ export const Temp = () => {
           <Route path="/Contactus" element={<ContactForm />} />
           <Route path="/Dp/:category" element={<DetaileProd />} />
           <Route path="/SingleProduct/:id" element={<SingleProduct />} />
-          <Route path="/Cart" element={<Cart Total={updateTotal} CartProduct={CartProduct} />} />
-          <Route path="/checkout" element={<Checkout total={total} />} />
+          <Route path="/Cart" element={<Cart Total={updateTotal}  />} />
+          <Route path="/checkout" element={<Checkout total={total} CartProduct={CartData}/>} />
           <Route path="/Dp/:category/ASCF" element={<ASCF />} />
           <Route path="/Specialitycake" element={<Specialitycake />} />
         </Routes>

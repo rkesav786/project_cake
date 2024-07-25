@@ -33,15 +33,17 @@ const ASC = require("./Controllers/ASC");
 
 
 
+
 // Establishing Routing Section
 App.post("/AddProduct",AddProduct);
 App.get("/GetAllCategories",GetAllCategories)
 App.get("/CategoryVice/:category",CategoryVice)
-App.get("/SingleProduct/:id",SingleProduct),
+App.get("/SingleProduct/:id",SingleProduct)
 App.post("/Addtocart",Card)
 App.get("/Cart",GetCart);
 App.delete("/deletecard",DeleteCard)
 App.post("/AddProduct/Subcategory",ASC)
+
 
 // Start Server
 App.listen(8000, () => {

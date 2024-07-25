@@ -2,7 +2,12 @@ import React from 'react';
 import OrderSuccessModal from './OrderSuccessModal';
 import Navbar from '../component/Navbar';
 
-function Checkout({ total }) {
+function Checkout({ total,CartProduct }) {
+
+
+console.log(CartProduct);
+
+
   return (
     <>
       <Navbar />

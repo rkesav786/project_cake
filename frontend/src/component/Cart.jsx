@@ -6,20 +6,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Modal, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-
-export const Cart = ({updateTotal,CartProduct}) => {
+export const Cart = ({Total, CartProduct}) => {
   const [cakeInfo, setCakeInfo] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
-
-  CartProduct(cakeInfo)
-
-  console.log(cakeInfo);
 
   useEffect(() => {
     axios.get("http://localhost:8000/Cart")
       .then((res) => {
         setCakeInfo(res.data);
+        CartProduct(res.data); // Call CartProduct after data is fetched
       })
       .catch((e) => {
         console.log("Error To Fetch Cart Data!", e);
@@ -32,6 +28,7 @@ export const Cart = ({updateTotal,CartProduct}) => {
     axios.get("http://localhost:8000/Cart")
       .then((res) => {
         setCakeInfo(res.data);
+        CartProduct(res.data); // Call CartProduct after data is fetched
       })
       .catch((e) => {
         console.log("Error To Fetch Cart Data!", e);
@@ -59,7 +56,7 @@ export const Cart = ({updateTotal,CartProduct}) => {
   }
 
   const totalPrice = cakeInfo.reduce((sum, cd) => sum + parseFloat(cd.price), 0);
-  updateTotal(totalPrice);
+  Total(totalPrice);
 
   return (
     <>
