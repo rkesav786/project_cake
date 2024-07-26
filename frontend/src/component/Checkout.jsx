@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import OrderSuccessModal from "./OrderSuccessModal";
 import Navbar from "../component/Navbar";
+import axios from "axios";
 
 function Checkout({ total, cartData }) {
   const [rname, setRName] = useState("");
@@ -36,6 +37,14 @@ function Checkout({ total, cartData }) {
       PayCOD: paycod,
     };
     console.log(paymentForm);
+    axios
+      .post("http://localhost:8000/orderdetails", paymentForm)
+      .then(() => {
+        console.log("orderdetails successfully posted");
+      })
+      .catch((e) => {
+        console.log("error occured ", e);
+      });
   };
 
   return (
@@ -153,7 +162,10 @@ function Checkout({ total, cartData }) {
             <div className="mt-3">
               <h5 className="text-start fw-bold">Sender Details</h5>
               <div className="card">
-                <div className="card-body" style={{ backgroundColor: "#fff0f7" }}>
+                <div
+                  className="card-body"
+                  style={{ backgroundColor: "#fff0f7" }}
+                >
                   <div className="row mb-3">
                     <div className="col-md-6">
                       <label htmlFor="senderName" className="form-label">
@@ -219,11 +231,14 @@ function Checkout({ total, cartData }) {
           </div>
           {/* Right Side - Payment Options and Cart Details */}
           <div className="col-lg-6">
-          \
+            \
             <div className="mt-3">
               <h5 className="text-start fw-bold">Cart Details</h5>
               <div className="card">
-                <div className="card-body" style={{ backgroundColor: "#fff0f7" }}>
+                <div
+                  className="card-body"
+                  style={{ backgroundColor: "#fff0f7" }}
+                >
                   {cartData && cartData.length > 0 ? (
                     <ul>
                       {cartData.map((item, index) => (
@@ -244,7 +259,10 @@ function Checkout({ total, cartData }) {
             <div className="mt-3">
               <h5 className="text-start fw-bold">Payment Options</h5>
               <div className="card">
-                <div className="card-body" style={{ backgroundColor: "#fff0f7" }}>
+                <div
+                  className="card-body"
+                  style={{ backgroundColor: "#fff0f7" }}
+                >
                   <div className="row">
                     <div className="col-md-12 mb-3">
                       <div className="form-check">
@@ -256,7 +274,10 @@ function Checkout({ total, cartData }) {
                           value="Online"
                           onChange={(e) => setPayop(e.target.value)}
                         />
-                        <label className="form-check-label" htmlFor="paymentOption1">
+                        <label
+                          className="form-check-label"
+                          htmlFor="paymentOption1"
+                        >
                           Pay Online
                         </label>
                       </div>
@@ -271,7 +292,10 @@ function Checkout({ total, cartData }) {
                           value="COD"
                           onChange={(e) => setPaycod(e.target.value)}
                         />
-                        <label className="form-check-label" htmlFor="paymentOption2">
+                        <label
+                          className="form-check-label"
+                          htmlFor="paymentOption2"
+                        >
                           Cash on Delivery
                         </label>
                       </div>

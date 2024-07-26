@@ -29,20 +29,18 @@ const Card = require("./Controllers/Card");
 const GetCart = require("./Controllers/GetCart");
 const DeleteCard = require("./Controllers/DeleteCard");
 const ASC = require("./Controllers/ASC");
-
-
-
-
+const OrderDetails = require("./Controllers/OrderDetails");
 
 // Establishing Routing Section
-App.post("/AddProduct",AddProduct);
-App.get("/GetAllCategories",GetAllCategories)
-App.get("/CategoryVice/:category",CategoryVice)
-App.get("/SingleProduct/:id",SingleProduct)
-App.post("/Addtocart",Card)
-App.get("/Cart",GetCart);
-App.delete("/deletecard",DeleteCard)
-App.post("/AddProduct/Subcategory",ASC)
+App.post("/AddProduct", AddProduct);
+App.get("/GetAllCategories", GetAllCategories);
+App.get("/CategoryVice/:category", CategoryVice);
+App.get("/SingleProduct/:id", SingleProduct);
+App.post("/Addtocart", Card);
+App.get("/Cart", GetCart);
+App.delete("/deletecard", DeleteCard);
+App.post("/AddProduct/Subcategory", ASC);
+App.post("/orderdetails", OrderDetails);
 
 
 // Start Server
